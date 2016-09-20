@@ -38,7 +38,7 @@ shinyUI(fluidPage(
                         
                         conditionalPanel(
                                 condition = "input.output=='Yes'",
-                                h3(textOutput("Instr")),
+                                h2(textOutput("Instr")),
                                 h3("This APP has been created using RStudio Shiny package, by ADVATICA (vicarizmendi), for the Coursera  `Developing Data Products Course Project`"),
                                 h3("- The plot shows how Shiny works fine with Plotly, a collaboration platform for modern data science"),
                                 h3("- It represents the Maunga Whau Volvano in a 3D representation"),
