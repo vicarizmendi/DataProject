@@ -22,6 +22,8 @@ shinyUI(fluidPage(
                         helpText("To go to the instructions just select the option  -Yes- above"),
                         
                         conditionalPanel(condition = "input.output=='No'", 
+                                         selectInput("data", "Dataset:",
+                                                     choices = c("volcano", "zeta")),
                                          sliderInput('phi', 'Scale the height',value = 1, 
                                                      min = 0.22, max = 2.37, step = 0.005),
                                          checkboxInput("def", "Default colors",
@@ -39,15 +41,16 @@ shinyUI(fluidPage(
                         conditionalPanel(
                                 condition = "input.output=='Yes'",
                                 h2(textOutput("Instr")),
-                                h3("This APP has been created using RStudio Shiny package, by ADVATICA (vicarizmendi), for the Coursera  `Developing Data Products Course Project`"),
+                                h3("This App has been created using RStudio Shiny package, by ADVATICA (vicarizmendi), for the Coursera  `Developing Data Products Course Project`"),
                                 h3("- The plot shows how Shiny works fine with Plotly, a collaboration platform for modern data science"),
                                 h3("- It represents the Maunga Whau Volvano in a 3D representation"),
                                 h3("- The dataset - volcano- is available in the `datasets` R package"),                                        
                                 h3("- The App can be easily changed to plot, for instance, predictive models with 2 predictors"),
+                                h3("- As an example `zeta`dataset can be also chosen, and any other dataset could be added"),
                                 h3("- You can select different Plotly dynamic options on the top right icons: zooming,changing the perspective (turntable rotation, orbital rotation), dowloading the plot in png format, and others "),
                                 h3("- To see the icons and move the plot, the mouse has to be on the plot itself"),
-                                h3("- By changing the controls on the left sidebar panel you can change colors and height of the 3D plot"),
-                                h3("- To go to the plot just select the option  No on the left panel")
+                                h3("- By changing the controls on the left sidebar panel you can change colors and height of the 3D plot. Note that when clicking the default colors checkbox, the colors selection is ignored") #,
+                                # h3("- To go to the plot just select the option  No on the left panel")
                                 
                         ),
                         conditionalPanel(
